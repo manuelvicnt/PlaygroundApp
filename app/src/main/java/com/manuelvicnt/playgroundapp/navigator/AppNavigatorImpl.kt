@@ -1,16 +1,13 @@
-package com.manuelvicnt.playgroundapp
+package com.manuelvicnt.playgroundapp.navigator
 
 import android.content.Context
 import android.content.Intent
+import com.manuelvicnt.playgroundapp.ui.LogsActivity
+import com.manuelvicnt.playgroundapp.ui.MainActivity
 
-enum class Screens {
-    Home,
-    AllLogs
-}
+class AppNavigatorImpl(private val context: Context): AppNavigator {
 
-class AppNavigator(private val context: Context) {
-
-    fun navigateTo(screen: Screens) {
+    override fun navigateTo(screen: Screens) {
         when (screen) {
             Screens.Home -> {
                 val intent = Intent(context, MainActivity::class.java)
