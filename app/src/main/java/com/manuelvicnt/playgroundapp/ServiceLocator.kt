@@ -7,7 +7,6 @@ import com.manuelvicnt.playgroundapp.data.LoggerLocalDataSource
 import com.manuelvicnt.playgroundapp.navigator.AppNavigator
 import com.manuelvicnt.playgroundapp.navigator.AppNavigatorImpl
 import com.manuelvicnt.playgroundapp.util.DateFormatter
-import com.manuelvicnt.playgroundapp.util.DateFormatterImpl
 
 class ServiceLocator(applicationContext: Context) {
 
@@ -17,7 +16,7 @@ class ServiceLocator(applicationContext: Context) {
     ).build()
 
     val loggerLocalDataSource = LoggerLocalDataSource(logsDatabase.logDao())
-    val dateFormatter: DateFormatter = DateFormatterImpl()
+    val dateFormatter = DateFormatter()
 
     fun provideNavigator(context: Context): AppNavigator {
         return AppNavigatorImpl(context)

@@ -1,6 +1,15 @@
 package com.manuelvicnt.playgroundapp.util
 
-interface DateFormatter {
+import android.annotation.SuppressLint
+import java.text.SimpleDateFormat
+import java.util.Date
 
-    fun formatDate(timestamp: Long): String
+class DateFormatter {
+
+    @SuppressLint("SimpleDateFormat")
+    private val formatter = SimpleDateFormat("d MMM yyyy HH:mm:ss")
+
+    fun formatDate(timestamp: Long): String {
+        return formatter.format(Date(timestamp))
+    }
 }
