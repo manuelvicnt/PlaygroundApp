@@ -7,7 +7,7 @@ import androidx.room.Query
 @Dao
 interface LogDao {
 
-    @Query("SELECT * FROM Log")
+    @Query("SELECT * FROM Log ORDER BY uid DESC")
     fun getAll(): List<Log>
 
     @Insert

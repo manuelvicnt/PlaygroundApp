@@ -4,8 +4,8 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class Log(val msg: String, val timestamp: String) {
+data class Log(val msg: String, val timestamp: Long) {
 
     @PrimaryKey(autoGenerate = true)
-    var uid: Int = 0
+    var uid: Long = 0
 }

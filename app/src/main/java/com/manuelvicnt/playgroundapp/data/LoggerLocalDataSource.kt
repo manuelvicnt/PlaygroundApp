@@ -14,7 +14,7 @@ class LoggerLocalDataSource(private val logDao: LogDao) {
 
     fun addLog(msg: String) {
         executorService.execute {
-            logDao.insertAll(Log(msg, System.currentTimeMillis().toString()))
+            logDao.insertAll(Log(msg, System.currentTimeMillis()))
         }
     }
 
