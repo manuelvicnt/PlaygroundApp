@@ -1,5 +1,6 @@
 package com.manuelvicnt.playgroundapp
 
+import android.app.Activity
 import android.content.Context
 import androidx.room.Room
 import com.manuelvicnt.playgroundapp.data.AppDatabase
@@ -18,7 +19,7 @@ class ServiceLocator(applicationContext: Context) {
     val loggerLocalDataSource = LoggerLocalDataSource(logsDatabase.logDao())
     val dateFormatter = DateFormatter()
 
-    fun provideNavigator(context: Context): AppNavigator {
-        return AppNavigatorImpl(context)
+    fun provideNavigator(activity: Activity): AppNavigator {
+        return AppNavigatorImpl(activity)
     }
 }
