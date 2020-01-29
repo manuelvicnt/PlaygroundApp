@@ -32,7 +32,7 @@ class LogsActivity : AppCompatActivity() {
 
     private fun populateFields() {
         logger = (applicationContext as LogApplication).serviceLocator.loggerLocalDataSource
-        dateFormatter = (applicationContext as LogApplication).serviceLocator.dateFormatter
+        dateFormatter = (applicationContext as LogApplication).serviceLocator.provideDateFormatter()
     }
 
     private fun setupViews() {

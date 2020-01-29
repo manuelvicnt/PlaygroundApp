@@ -17,7 +17,8 @@ class ServiceLocator(applicationContext: Context) {
     ).build()
 
     val loggerLocalDataSource = LoggerLocalDataSource(logsDatabase.logDao())
-    val dateFormatter = DateFormatter()
+
+    fun provideDateFormatter() = DateFormatter()
 
     fun provideNavigator(activity: Activity): AppNavigator {
         return AppNavigatorImpl(activity)
